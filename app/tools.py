@@ -1,4 +1,4 @@
 def joke_tool() -> str:
-    print("[TOOL] Presenting explanation")
-    print("EXPLANATION:")
-    return "EXPLANATION: completed"
+    print("[TOOL] Formatting market explanation")
+    print("MARKET EXPLANATION:")
+    return "MARKET EXPLANATION: completed"
