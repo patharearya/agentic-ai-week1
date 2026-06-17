@@ -1,7 +1,7 @@
 from app.control import decide_next_step
 from app.llm import call_llm
 from app.tools import joke_tool
-from app.memory import init_memory
+from app.memory import init_memory, save_memory
 
 def run_agent(goal: str):
     memory = init_memory(goal)
@@ -28,4 +28,5 @@ def run_agent(goal: str):
 
         elif step == "stop":
             print("[AGENT] Agent stopped cleanly")
+            save_memory(memory)
             break
