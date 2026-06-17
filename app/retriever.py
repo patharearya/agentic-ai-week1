@@ -1,12 +1,12 @@
-def keyword_retrieval(chunks: list, question: str):
-    print("\n[RETRIEVER] Performing Keyword Search")
+def retrieve_context(query: str) -> str:
+    print("[RETRIEVER] Searching knowledge base")
 
-    relevant_chunks = []
+    with open("app/knowledge.txt", "r", encoding="utf-8") as f:
+        lines = f.readlines()
 
-    for chunk in chunks:
-        for word in question.lower().split():
-            if word in chunk.lower():
-                relevant_chunks.append(chunk)
-                break
+    matched = [line.strip() for line in lines if any(word.lower() in line.lower() for word in query.split())]
 
-    return relevant_chunks
+    if not matched:
+        return "No relevant context found."
+
+    return " ".join(matched)
