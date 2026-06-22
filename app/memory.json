@@ -1,0 +1,9 @@
+{
+  "goal": "What happens if I submit the form late?",
+  "steps": [
+    "If you submit the form late, it will not be accepted under any circumstances. You will not be able to take the examination if your form is not submitted by the deadline of 18 October 2026.",
+    "observed"
+  ],
+  "completed": true,
+  "tool_retries": 0
+}

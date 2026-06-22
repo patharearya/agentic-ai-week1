@@ -10,3 +10,17 @@ def retrieve_context(query: str) -> str:
         return "No relevant context found."
 
     return " ".join(matched)
+
+
+def keyword_retrieval(chunks: list, question: str) -> list:
+    print("\n[RETRIEVER] Performing Keyword Search")
+
+    relevant_chunks = []
+
+    for chunk in chunks:
+        for word in question.lower().split():
+            if word in chunk.lower():
+                relevant_chunks.append(chunk)
+                break
+
+    return relevant_chunks
