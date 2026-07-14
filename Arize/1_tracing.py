@@ -88,6 +88,9 @@ crew = Crew(
     process=Process.sequential,
 )
  
-user_inputs = {"tickers": "TSLA", "focus": "financial analysis and market outlook"}
- 
+user_inputs = {
+    "tickers": input("Enter ticker symbol(s) (e.g. TSLA, AAPL): "),
+    "focus": input("Enter focus area (e.g. financial analysis, earnings report): ")
+}
+
 result = crew.kickoff(inputs=user_inputs)
